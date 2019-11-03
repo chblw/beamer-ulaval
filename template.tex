@@ -1,43 +1,41 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usefonttheme[onlymath]{serif}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[english]{babel}
-%\frenchbsetup{CompactItemize=false}
 
-
-% \usepackage[babel]{csquotes}
-% \usepackage[url=false, doi=false, style=science, backend=bibtex, bibencoding=ascii]{biblatex}
-% \bibliography{IEEEabrv,bib/OAM}
-
+% Si la présentation est en francais :
+\usepackage[french]{babel}
+\usepackage[figurename=Illustration, tablename=Tableau]{caption}
   
 \graphicspath{{img/}}
 
 
 \mode<presentation> {
-	% \useoutertheme{infolines} % Pour les thèmes qui n'ont pas de pied-de-page
 	\usetheme{ulaval}
-	%\usecolortheme{ulaval}
-	% \setbeamercovered{transparent}
 	\setbeamercovered{invisible}
-	%\setbeamertemplate{navigation symbols}{} % Enlever les icônes de navigation
 }
 
-
-%\usepackage{bm} 
-% For typesetting bold math (not \mathbold)
-%\includeonlyframes{}
-
+% Si on veut des notes sur le deuxième écran
 %\usepackage{pgfpages}
 %\setbeameroption{show notes on second screen}
 %\setbeameroption{show notes}
 %\setbeamertemplate{note page}[plain]
 
-\logo{\includegraphics[height=0.6cm]{COPL}\hspace{.5cm}%
-	\includegraphics[height=0.5cm]{UL_P}\hspace{.2cm}\vspace{.85\paperheight}}
+\logo{
+	\includegraphics[height=0.5cm]{UL_P}\hspace{.2cm}\vspace{.85\paperheight}
+}
 
+\titlegraphic{
+	% Sélectionner une ou plusieurs affiliations
+	\includegraphics[height=1cm]{UL_actu}\quad
+	\includegraphics[height=1cm]{DotLayer}\quad
+	\includegraphics[height=1cm]{crdm_fr}\quad
+	\includegraphics[height=1cm]{graal}\quad
+	\includegraphics[height=1cm]{quantact}\quad
+	% \includegraphics[height=1cm]{uqam.png}
+}
 
 \title[Short Title]{Long Title}
 %\subtitle[]{}
@@ -45,8 +43,8 @@
 \author[Short Author Name]{Long Author Name}
 \institute[Université Laval]
 {
-	Electrical and Computer Engineering Department \\
-	Laval University, Quebec City, Canada \\
+	École d'actuariat \\
+	Université Laval, Québec, Canada \\
 	\medskip
 	{\emph{email@ulaval.ca}}
 }
@@ -55,10 +53,14 @@
 
 
 \AtBeginSection[]{
-  \begin{frame}
-	\Huge \centerline{\insertsection}
-%  \small \tableofcontents[currentsection, hideothersubsections]
-  \end{frame} 
+	\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
 }
 
 \begin{document}
@@ -67,8 +69,6 @@
 
 \begin{frame}[label=titre, plain]
 	\titlepage
-	\begin{center}\includegraphics[height=1.2cm]{COPL}%
-		\hspace{2cm}\includegraphics[height=1cm]{UL_P}\end{center}
 \end{frame}
 
 
